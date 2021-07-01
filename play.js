@@ -1,7 +1,11 @@
 const connect = require('./client.js')
+const setUpInput = require('./input.js');
+
 
 console.log("Connecting ...");
 const play = connect();
+setUpInput(play);
+
 
 // const moves = ["Move: up", "Move: up", "Move: left", "Move: left"];
 
@@ -14,23 +18,5 @@ const play = connect();
 //   time += 50;
 // }
 
-const handleUserInput = function (data) {
-  if (data === '\u0003') {
-    play.destroy();
-    process.exit();
-  }
-};
 
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-
-  stdin.on('data', handleUserInput);
-
-  return stdin;
-};
-
-setupInput();
 
