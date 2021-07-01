@@ -7,16 +7,16 @@ const play = connect();
 setUpInput(play);
 
 
-// const moves = ["Move: up", "Move: up", "Move: left", "Move: left"];
+const statements = ["Say: I'm finna win", "Say: Its lit", "Say: I love you", "Say: Covid aint lit"];
 
-// let time = 50;
+let time = 50;
 
-// for (let move of moves ) {
-//   setTimeout(() => {
-//     play.write(move);
-//   }, time)
-//   time += 50;
-// }
+for (let says of statements ) {
+  setTimeout(() => {
+    play.write(says);
+  }, time)
+  time += 500;
+}
 
 
 
